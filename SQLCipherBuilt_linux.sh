@@ -37,8 +37,6 @@ cd sqlcipher-${VERSION}
 
 #Compile
 
-make clean
-
 ./configure \
 CFLAGS="${CFLAGS} ${SQLITE_CFLAGS}" \
 LDFLAGS="${LDFLAGS}"
