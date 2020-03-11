@@ -29,17 +29,17 @@ All is automatic!
 Open the SQLCipherBuilt_linux.sh, find the lines and edit your config
 
 ```
-./configure \
---enable-tempstore=no \
---enable-load-extension \
---disable-tcl \
-CFLAGS="\
--arch x86_64 \
--mlinux-version-min=10.10 \
-" \
-LDFLAGS="\
--framework Security \
--framework Foundation \
+SQLITE_CFLAGS=" \
+-DSQLITE_HAS_CODEC \
+-DSQLITE_THREADSAFE=1 \
+-DSQLITE_TEMP_STORE=2 \
+"
+
+LDFLAGS=" \
+-lcrypto
+"
+
+CFLAGS=" \
 "
 ```
 

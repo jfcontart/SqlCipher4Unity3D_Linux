@@ -15,11 +15,11 @@ SQLITE_CFLAGS=" \
 -DSQLITE_TEMP_STORE=2 \
 "
 
-LDFLAGS="\
+LDFLAGS=" \
 -lcrypto
 "
 
-CFLAGS="\
+CFLAGS=" \
 "
 #prepare dir to compile
 
@@ -43,7 +43,6 @@ make clean
 --disable-tcl \
 --enable-tempstore=yes \
 --enable-threadsafe=yes \
---with-crypto-lib=commoncrypto \
 CFLAGS="${CFLAGS} ${SQLITE_CFLAGS}" \
 LDFLAGS="${LDFLAGS}"
 
