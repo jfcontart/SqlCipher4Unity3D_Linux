@@ -13,6 +13,14 @@ Use with https://github.com/netpyoung/SqlCipher4Unity3D .
 You need :
 - computer with **linux**
 - we use **Ubuntu**
+- libssl-dev
+```
+sudo apt-get install libssl-dev
+```
+- tcl-dev
+```
+sudo apt-get install tcl-dev
+```
 
 ## Use the SQLCipherBuilt_linux.sh
 
@@ -20,7 +28,7 @@ Use the SQLCipherBuilt_linux.sh default
 
 ```
 cd <this directory>
-./SQLCipher_linux.sh <version example:4.3.0>
+./SQLCipherBuilt_linux.sh <version example:4.3.0>
 ```
 All is automatic!
 
@@ -47,9 +55,13 @@ save and execute:
 
 ```
 cd <this directory>
-./SQLCipher_linux.sh <version example:4.3.0>
+./SQLCipherBuilt_linux.sh <version example:4.3.0>
 ```
 All is automatic!
+
+## Where to find compiled library?
+
+A directory is created for each compiled version (ex: 4.2.0), inside you can see a folder named **Linux** with the file **sqlcipher.a**
 
 ## Copy in Unity3D project
 
