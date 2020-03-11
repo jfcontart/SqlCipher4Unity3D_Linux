@@ -21,6 +21,7 @@ LDFLAGS=" \
 
 CFLAGS=" \
 "
+
 #prepare dir to compile
 
 mkdir ./tmp
@@ -30,7 +31,7 @@ cd ./tmp/${VERSION}/
 
 #Download sources files from SQLCipher
 
-curl -OL https://github.com/sqlcipher/sqlcipher/archive/v${VERSION}.tar.gz
+wget https://github.com/sqlcipher/sqlcipher/archive/v${VERSION}.tar.gz
 tar -xvf v${VERSION}.tar.gz
 cd sqlcipher-${VERSION}
 
@@ -39,10 +40,6 @@ cd sqlcipher-${VERSION}
 make clean
 
 ./configure \
---with-pic \
---disable-tcl \
---enable-tempstore=yes \
---enable-threadsafe=yes \
 CFLAGS="${CFLAGS} ${SQLITE_CFLAGS}" \
 LDFLAGS="${LDFLAGS}"
 
@@ -56,14 +53,9 @@ cd ..
 
 mkdir ./${VERSION}
 mkdir ./${VERSION}/linux
-rm  ./${VERSION}/linux/sqlcipher.bundle
 
 cp ./tmp/${VERSION}/sqlcipher-${VERSION}/.libs/libsqlcipher.a ./${VERSION}/linux/sqlcipher.a
-
-open ./${VERSION}
 
 #Clean 
 
 rm -r ./tmp/
-
-
