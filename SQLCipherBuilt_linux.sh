@@ -31,8 +31,8 @@ cd ./tmp/${VERSION}/
 
 #Download sources files from SQLCipher
 
-wget https://github.com/sqlcipher/sqlcipher/archive/v${VERSION}.tar.gz
-tar -xvf v${VERSION}.tar.gz
+wget https://github.com/sqlcipher/sqlcipher/archive/v${VERSION}.zip
+tar -xvf v${VERSION}.zip
 cd sqlcipher-${VERSION}
 
 #Compile
@@ -51,6 +51,7 @@ cd ..
 
 mkdir ./${VERSION}
 mkdir ./${VERSION}/linux
+rm  ./${VERSION}/libsqlcipher.a
 
 cp ./tmp/${VERSION}/sqlcipher-${VERSION}/.libs/libsqlcipher.a ./${VERSION}/linux/sqlcipher.a
 

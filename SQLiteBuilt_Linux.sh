@@ -2,10 +2,10 @@
 
 #Go on debian 
 
-apt-get update 
-apt-get dist-upgrade
-apt-get install build-essential
-apt-get install gcc
+#apt-get update 
+#apt-get dist-upgrade
+#apt-get install build-essential
+#apt-get install gcc
 
 # Version example : 3310100
 
@@ -26,13 +26,11 @@ cd ./tmp/${VERSION}/
 
 #Download sources files from SQLCipher
 
-curl -OL https://www.sqlite.org/2020/sqlite-autoconf-${VERSION}.tar.gz
+wget https://www.sqlite.org/2020/sqlite-autoconf-${VERSION}.tar.gz
 tar -xvf sqlite-autoconf-${VERSION}.tar.gz
-ls 
 cd sqlite-autoconf-${VERSION}
 
 #Compile
-
 make clean
 ./configure \
 CFLAGS=" \
@@ -46,12 +44,10 @@ cd ..
 cd .. 
 
 mkdir ./${VERSION}
-mkdir ./${VERSION}/macOS
-rm  ./${VERSION}/macOS/libsqlite3.0.dylib
+mkdir ./${VERSION}/linux
+rm  ./${VERSION}/libsqlite.a
 
-cp ./tmp/${VERSION}/sqlite-autoconf-${VERSION}/.libs/libsqlite3.0.dylib ./${VERSION}/macOS/libsqlite3.0.dylib
-
-open ./${VERSION}
+cp ./tmp/${VERSION}/sqlite-autoconf-${VERSION}/.libs/libsqlite.a ./${VERSION}/linux/libsqlite.a
 
 #Clean 
 
